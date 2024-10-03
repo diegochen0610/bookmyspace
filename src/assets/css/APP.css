@@ -1,0 +1,162 @@
+/* styles.css */
+
+/* 全局樣式 */
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #2c3e50;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 標題樣式 */
+header {
+    background-color: #42b983;
+    color: white;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 漢堡菜單按鈕樣式（手機模式） */
+.menu-btn {
+    display: none;
+    background-color: #42b983;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    z-index: 2;
+}
+
+/* 桌面版導航欄 */
+.desktop-nav {
+    display: flex;
+}
+
+.desktop-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.desktop-nav ul li {
+    margin: 0 15px;
+}
+
+.desktop-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.desktop-nav ul li a.router-link-active {
+    font-weight: bold;
+    background-color: #367c6b;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+/* 側邊導航欄的樣式（手機模式） */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #42b983;
+    color: white;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 3;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-nav ul li {
+    margin: 20px 0;
+}
+
+.mobile-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: block;
+    padding: 10px 20px;
+}
+
+.mobile-nav ul li a.router-link-active {
+    font-weight: bold;
+    background-color: #367c6b;
+    border-radius: 5px;
+}
+
+/* 開啟側邊欄時，讓它滑動出來 */
+.nav-open {
+    left: 0;
+}
+
+/* 遮罩層樣式（用於點擊關閉側邊欄） */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* 手機端樣式 */
+@media only screen and (max-width: 600px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    .menu-btn {
+        display: block;
+        /* 在手機上顯示漢堡菜單按鈕 */
+    }
+
+    .desktop-nav {
+        display: none;
+        /* 手機模式下隱藏桌面版導航欄 */
+    }
+
+    .mobile-nav {
+        /* 側邊欄樣式改變 */
+        left: -250px;
+    }
+}
+
+/* 表格響應式調整 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+@media only screen and (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        /* 手機模式下表格水平滾動 */
+    }
+}
